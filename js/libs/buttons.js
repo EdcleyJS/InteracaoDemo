@@ -150,7 +150,7 @@ $(document).ready(function () {
 	    arr[i]=d+1;
 	});
 	$('#pills-tab >li >a')[0].click();
-	$('#pills-tab >li')[1].classList.add('disabled');
+	//$('#pills-tab >li')[1].classList.add('disabled');
 	// BLOCO PARA INICIAR OS STEPS DE CADA ETAPA DO SISTEMA
 	stepper0 = new Stepper($('.bs-stepper')[0]);
 	stepper2 = new Stepper($('.bs-stepper')[1]);
@@ -272,6 +272,16 @@ $(document).ready(function () {
     	}
 	});
 	// PARA A ETAPA DE PERGUNTAS CORRIGE O PROBLEMA DO TAMANHO DO MAPA POR CONTA DAS ANIMAÇÕES E INICIA OS MAPAS QUANDO UMA TAB MUDA.
+	$("a[href='#IM']").on('shown.bs.tab', function(e) {
+		mapRange.invalidateSize();
+	});
+	$("a[href='#HOM']").on('shown.bs.tab', function(e) {
+		mapVis04.invalidateSize();
+	});
+	$("a[href='#DM']").on('shown.bs.tab', function(e) {
+		mapVis03.invalidateSize();
+	});
+
     $("a[href='#pills-profile']").on('shown.bs.tab', function(e) {
 	    var id= $('#2Form > div.active > div > div > div > div>').siblings()[0].id;
 	    var base=id.substring(3,4);

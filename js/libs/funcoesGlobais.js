@@ -4,7 +4,33 @@ function refresh(){
       window.location.reload(true);
   }
 }
-
+function mounthEn(mesmediaN){
+        if(mesmediaN==0){
+          return "Jan";
+        }else if(mesmediaN==1){
+          return "Feb";
+        }else if(mesmediaN==2){
+          return "Mar";
+        }else if(mesmediaN==3){
+          return "Apr";
+        }else if(mesmediaN==4){
+          return "May";
+        }else if(mesmediaN==5){
+          return "Jun";
+        }else if(mesmediaN==6){
+          return "Jul";
+        }else if(mesmediaN==7){
+          return "Aug";
+        }else if(mesmediaN==8){
+          return "Sep";
+        }else if(mesmediaN==9){
+          return "Oct";
+        }else if(mesmediaN==10){
+          return "Nov";
+        }else if(mesmediaN==11){
+          return "Dec";
+        }
+}
 var maior=0,menor=+Infinity;
 function distribuicaoNYC(id){
   var distdataMes=[];

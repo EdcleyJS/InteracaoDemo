@@ -6,7 +6,7 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta http-equiv="Content-Security-Policy" content="default-src *;img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	    <title>Interaction Map</title>
+	    <title>ID 1125</title>
 		<!-- JavaScript-->
 		<script type="text/javascript" src="./js/libs/jquery-3.4.1.js"></script>
 		<script type="text/javascript" src="./js/libs/popper.min.js"></script>
@@ -20,6 +20,8 @@
 		<script type="text/javascript" src="./js/libs/funcoesGlobais.js"></script>
 		<script type="text/javascript" src="./js/libs/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/libs/math.min.js"></script>
+		<script type="text/javascript" src='./js/libs/turf.min.js'></script>
+		<script type="text/javascript" src="./js/animacao.js"></script>
 		<!-- JQuery Specific-->
 		<script type="text/javascript" src="./js/libs/buttons.js"></script>
 		<script type="text/javascript" src="./js/libs/c071df3350.js"></script>
@@ -39,16 +41,61 @@
 		<link rel="stylesheet" type="text/css" href="./css/bs-stepper.min.css">
 	</head>
 	<body>
-		<div class="card-block">
-			<ul class="list-group">
-				<li class="list-group-item ">
-					<div id='vis02' style="height: 450px; width: 100%"></div>
-					<div style="border-style: dotted;" id="slidert">
-						<input type="text" id="Vis02Tuto" name="example_name" value="" />
-						<label for="Vis02Tuto"> Position the pointer to choose a value.</label>
-					</div>
+		<div class="container-fluid">
+			<img src="./data/vis2020.png" style="width: 50%; height: auto;  display: block; margin-left: auto; margin-right: auto;">
+			<h3 style="text-align: center">A Comparative Study of Methods for Visualization of Probability Distributions of Geographical Data.</h3>
+			<h3 style="text-align: center">Online Submission ID: 1125</h3>			
+		</div>		
+		<div class="container-fluid">
+			<ul class="nav nav-pills center-pills" id="pills-tab" role="tablist">
+				<li class="nav-item">
+				    <a class="nav-link" id="IM1" data-toggle="pill" href="#IM" role="tab" aria-controls="IM" aria-selected="false"><b>Interaction Map (IM)</b></a>
 				</li>
+				<li class="nav-item">
+				    <a class="nav-link" id="HOM2" data-toggle="pill" href="#HOM" role="tab" aria-controls="HOM" aria-selected="false"><b>Hypothetical Outcome Map (HOM)</b></a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link" id="DM3" data-toggle="pill" href="#DM" role="tab" aria-controls="DM" aria-selected="false"><b>Dot Map (DM)</b></a>
+				</li>		
 			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="IM" role="tabpanel" aria-labelledby="IM1">
+					<div class="card-block">
+						<ul class="list-group">
+							<li class="list-group-item ">
+								<div id='vis02' style="height: 450px; width: 100%"></div>
+								<div style="border-style: dotted;" id="slidert">
+									<input type="text" id="Vis02Tuto" name="example_name" value="" />
+									<label for="Vis02Tuto"> Position the pointer to choose a value.</label>
+								</div>
+							</li>
+							The maps rendering can long a few seconds. If necessary please wait.
+						</ul>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="HOM" role="tabpanel" aria-labelledby="HOM2">
+					<div class="card-block">
+						<ul class="list-group">
+							<li class="list-group-item ">
+								<div id='vis04' style="height: 450px; width: 100%"></div>
+							</li>
+							<li class="list-group-item" style="text-align: center">
+								<button type="button" class="btn btn-primary" onclick="StartHOPS()">Animate</button>
+								<button type="button" class="btn btn-primary" onclick="StopHOPS()">Stop</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="DM" role="tabpanel" aria-labelledby="DM3">
+					<div class="card-block">
+						<ul class="list-group">
+							<li class="list-group-item ">
+								<div id='vis03' style="height: 450px; width: 100%"></div>
+							</li>
+						</ul>
+					</div>		
+				</div>
+			</div>
 		</div>
 		<header class="w3-container w3-sand w3-center" style="padding:28px 16px; display: none;" id='header'>
 		  	<h1 class="w3-margin w3-jumbo">CIn-UFPE - Estudo de Usuário.</h1>
@@ -1047,4 +1094,6 @@
 		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	</body>
 	<script type="text/javascript" src="./js/choropleth.js"></script>
+	<script type="text/javascript" src="./js/media.js"></script>
+	<script type="text/javascript" src="./js/dotmap.js"></script>
 </html>
